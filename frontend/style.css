@@ -1,14 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: "Poppins", sans-serif;
+
+
+}
+
 body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    box-sizing: border-box;
+    min-width: fit-content;
     height: 100vh; /* Height de la vue pour centrer verticalement */
-    background-color: #f0f0f0; /* Couleur de fond légère */
+    background-color: #F0F0F0; /* Couleur de fond légère */
 }
 
 .welcome {
     text-align: center;
     font-family: Arial, sans-serif; /* Police lisible */
+}
+
+.navbar{
+    /* width: 100vw; */
+    display: flex;
+    border-bottom: 2px white solid;
+    flex-direction: row;
+    justify-content: space-between;
+    
+
+    align-items: center;
+    padding: 10px 40px;
+    font-size: x-large;
+    color: white;
+    font-weight: bold;
+    background-color: #222;
+
+}
+
+.card {
+    border: 1px solid #ccc;  /* Bordure grise claire */
+    padding: 8px 12px;  /* Espacement interne */
+    margin: 16px;  /* Espacement externe */
+    width: 50%;  /* Largeur fixe */
+    border-radius: 16px;  /* Coins arrondis */
+    background: #f9f9f9;  /* Fond gris clair */
+    transition: box-shadow 0.3s ease-in-out;  /* Transition pour un effet fluide */
+    animation-name: scaleCard; /* Utilisation de "animation-name" */
+    animation-duration: 0.8s; /* Durée de l'animation */
+    animation-timing-function: ease-in; /* Timing de l'animation */
+}
+
+/* Effet au survol (hover) pour ajouter une ombre et une légère élévation */
+.card:hover {
+    box-shadow: 0 4px 12px 0 rgba(4, 155, 177, 0.4);  /* Ombre bleue avec alpha pour transparence */
+}
+
+.card h2 {
+    margin: 0;  /* Pas d'espace supplémentaire */
+    color: #049BB1;  /* Couleur de texte pour les titres */
+}
+
+.card p {
+    margin-top: 8px;  /* Espace entre les paragraphes */
+    text-align: justify;  /* Justification du texte pour une meilleure lecture */
+}
+#categories-container{
+    display: flex;
+    flex-direction:row ;
+    gap: 16px;
+    font-size: small;
+
+}
+.categories_liste{
+    border-right: 2px solid white;
+    list-style: none;
+    padding: 12px;
+}
+.categories_liste:hover{
+    transform: scale(1.4);
+    transition: all .2s;
+    cursor: pointer;
+}
+#articles-container{
+    position: relative;
+    padding: 10px 10px;
+    min-width: 97dvw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 20px;
+    
+}
+
+
+
+
+ .errorMessage {
+    position: absolute;
+    top: 0;
+    font-weight: 800;
+    font-size: x-large;
+    color: red;
+    align-self: center;
+    animation-name: wobble; /* Utilisation de "animation-name" */
+    animation-duration: 0.6s; /* Durée de l'animation */
+    animation-timing-function: ease-in; /* Timing de l'animation */
+    animation-direction: alternate; /* Direction de l'animation */
+}
+
+@keyframes wobble {
+    0% { transform: translateX(0%); } 
+    15% { transform: translateX(-25%) rotate(-5deg); } 
+    30% { transform: translateX(20%) rotate(3deg); } 
+    45% { transform: translateX(-15%) rotate(-3deg); } 
+    60% { transform: translateX(10%) rotate(2deg); }
+    75% { transform: translateX(-5%) rotate(-1deg); }
+    100% { transform: translateX(0%); } 
+ } 
+ @keyframes scaleCard {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(.5);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
